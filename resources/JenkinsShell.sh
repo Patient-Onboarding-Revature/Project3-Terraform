@@ -23,3 +23,7 @@ sudo rpm --import https://jenkins-ci.org/redhat/jenkins-ci.org.key
 sudo yum -y install jenkins
 sudo systemctl start jenkins
 sudo systemctl enable jenkins
+
+echo GIVE DOCKER PERMISSIONS TO JENKINS
+sudo usermod -aG docker jenkins
+sudo service jenkins restart
