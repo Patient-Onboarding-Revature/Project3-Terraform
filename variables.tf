@@ -1,9 +1,4 @@
-variable "jenkins_startup_script" {
-    type = string
-    default = "JenkinsShell.sh"
-}
-
-variable "project" {
+variable "project_id" {
     type = string
 }
 
@@ -13,6 +8,16 @@ variable "region" {
 
 variable "zone" {
     type = string
+}
+
+variable "jenkins_startup_script" {
+    type = string
+    default = "JenkinsShell.sh"
+}
+
+variable "database_name" {
+    type = string
+    default = "temp-db"
 }
 
 variable "authorized_networks_to_database" {

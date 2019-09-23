@@ -24,6 +24,19 @@ resource "google_compute_instance" "devops_bastion" {
     }
 }
 
+resource "google_compute_instance_iam_binding" "jenkins-binding" {
+  instance_name = "${google_compute_instance.jenkins_vm.name}"
+  role = "roles/custom.jenkinsUAT"
+
+  members = [
+    "allAuthenticatedUsers",
+  ]
+
+  depends_on = [
+      google_project_iam_custom_role.jenkins-role,
+  ]
+}
+
 resource "google_compute_instance" "jenkins_vm" {
     name = "jenkins-server"
     machine_type = "n1-standard-1"

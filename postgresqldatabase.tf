@@ -1,10 +1,10 @@
 resource "google_sql_database" "database" {
-    name = "my-database"
+    name = "patient-onboarding-database"
     instance = "${google_sql_database_instance.uat_database.name}"
 }
 
 resource "google_sql_database_instance" "uat_database" {
-    name = "temp-db"
+    name = "${var.database_name}"
     database_version = "POSTGRES_9_6"
     region = var.region
     
@@ -24,9 +24,11 @@ resource "google_sql_database_instance" "uat_database" {
     }
 }
 
+/*
 resource "google_sql_user" "uat_database_user" {
   name = "host-user"
   instance = "${google_sql_database_instance.uat_database.name}"
   host = "postgres"
   password = "ertyuiop"
 }
+*/
