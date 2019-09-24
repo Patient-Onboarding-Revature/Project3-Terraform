@@ -1,5 +1,5 @@
-resource "google_storage_bucket" "angular-page" {
-    name     = "patient-onboarding-page"
+resource "google_storage_bucket" "static-page" {
+    name     = "${var.bucket_name}"
     location = "US"
 
     cors {

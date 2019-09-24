@@ -5,11 +5,11 @@ resource "google_sql_database" "database" {
 
 resource "google_sql_database_instance" "uat_database" {
     name = "${var.database_name}"
-    database_version = "POSTGRES_9_6"
+    database_version = "${var.database_version}"
     region = var.region
     
     settings {
-        tier = "db-f1-micro"
+        tier = "${var.database_tier}"
         availability_type = "ZONAL"
         ip_configuration {
             ipv4_enabled = true
