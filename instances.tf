@@ -50,21 +50,9 @@ resource "google_compute_instance" "jenkins_vm" {
     }
 
     service_account {
+        email = "${google_service_account.jenkins_account.email}"
         scopes = ["cloud-platform"]
     }
 
     metadata_startup_script = "${data.template_file.jenkins_startup_script.rendered}"
-}
-
-resource "google_compute_instance_iam_binding" "jenkins-binding" {
-  instance_name = "${google_compute_instance.jenkins_vm.name}"
-  role = "roles/custom.jenkinsUAT"
-
-  members = [
-    "allAuthenticatedUsers",
-  ]
-
-  depends_on = [
-      google_project_iam_custom_role.jenkins-role,
-  ]
 }
