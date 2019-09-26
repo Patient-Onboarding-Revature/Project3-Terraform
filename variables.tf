@@ -41,7 +41,11 @@ variable "authorized_networks_to_database" {
 }
 
 // Bucket name that needs to be unique
-variable "bucket_name" {
+variable "bucket_webpage_name" { // Bucket for holding static web page
+    type = string
+}
+
+variable "bucket_data_sink" { // Bucket for log data
     type = string
 }
 

@@ -12,6 +12,13 @@ sudo yum -y install java-1.8.0-openjdk-devel
 echo INSTALL MAVEN  
 sudo yum -y install maven
 
+echo INSTALL NODEJS
+curl -sL https://rpm.nodesource.com/setup_10.x | sudo bash -
+sudo yum -y install nodejs
+
+echo INSTALL ANGULAR
+sudo npm -y install -g @angular/cli
+
 echo INSTALL DOCKER
 curl -fsSL https://get.docker.com/ | sh
 sudo systemctl start docker
@@ -27,3 +34,8 @@ sudo systemctl enable jenkins
 echo GIVE DOCKER PERMISSIONS TO JENKINS
 sudo usermod -aG docker jenkins
 sudo service jenkins restart
+
+#echo GET JENKINS CLI
+#sudo yum -y install wget
+#sudo wget http://localhost:8080/jnlpJars/jenkins-cli.jar
+#sudo java -jar jenkins-cli.jar [CMD]
