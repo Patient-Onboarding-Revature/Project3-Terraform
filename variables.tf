@@ -20,7 +20,11 @@ variable "jenkins_startup_script" {
 // Database information
 variable "database_name" {
     type = string
-    default = "temp-db"
+}
+
+variable "database_instance_name" {
+    type = string
+    default = "postgres"
 }
 
 variable "database_version" {
@@ -58,7 +62,6 @@ variable "key_name" {
     type = string
 }
 
-
 // Firewall rules
 variable "allowed_into_bastion" {
     type = list(string)
@@ -66,4 +69,10 @@ variable "allowed_into_bastion" {
 
 variable "allowed_into_jenkins" {
     type = list(string)
+}
+
+// Jenkins image
+variable "jenkins_image" {
+    type = string
+    default = "centos-7"
 }

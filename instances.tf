@@ -38,7 +38,7 @@ resource "google_compute_instance" "jenkins_vm" {
     boot_disk {
         auto_delete = true
         initialize_params {
-            image = "centos-7"
+            image = "${var.jenkins_image}"
         }
     }
 

@@ -1,10 +1,10 @@
 resource "google_sql_database" "database" {
-    name = "patient-onboarding-database"
+    name = "${var.database_name}"
     instance = "${google_sql_database_instance.uat_database.name}"
 }
 
 resource "google_sql_database_instance" "uat_database" {
-    name = "${var.database_name}"
+    name = "${var.database_instance_name}"
     database_version = "${var.database_version}"
     region = var.region
     
