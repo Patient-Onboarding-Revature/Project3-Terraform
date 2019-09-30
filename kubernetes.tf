@@ -7,6 +7,10 @@ resource "google_container_cluster" "uat_cluster" {
 
     network = "${google_compute_network.uat_network.self_link}"
     subnetwork = "${google_compute_subnetwork.uat_subnetwork.self_link}"
+
+    depends_on = [
+        google_project_services.project_apis,
+    ]
 }
 
 resource "google_container_node_pool" "uat_nodes" {
@@ -29,4 +33,8 @@ resource "google_container_node_pool" "uat_nodes" {
             "https://www.googleapis.com/auth/devstorage.read_only",
         ]
     }
+    
+    depends_on = [
+        google_project_services.project_apis,
+    ]
 }

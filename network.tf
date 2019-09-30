@@ -1,6 +1,10 @@
 resource "google_compute_network" "uat_network" {
     name = "devops-network"
     auto_create_subnetworks = false
+
+    depends_on = [
+        google_project_services.project_apis,
+    ]
 }
 
 resource "google_compute_subnetwork" "pipeline_subnetwork" {

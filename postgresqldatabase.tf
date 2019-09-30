@@ -22,6 +22,10 @@ resource "google_sql_database_instance" "uat_database" {
             }
         }
     }
+
+    depends_on = [
+        google_project_services.project_apis,
+    ]
 }
 
 /*

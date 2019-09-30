@@ -1,6 +1,10 @@
 resource "google_service_account" "jenkins_account" {
     account_id = "jenkins-service-account"
     display_name = "Jenkins Service Account"
+
+    depends_on = [
+        google_project_services.project_apis,
+    ]
 }
 
 resource "google_project_iam_custom_role" "jenkins_role" {
@@ -16,6 +20,10 @@ resource "google_project_iam_custom_role" "jenkins_role" {
           "container.pods.delete",
           "container.deployments.create",
           "container.deployments.update"
+    ]
+
+    depends_on = [
+        google_project_services.project_apis,
     ]
 }
 

@@ -11,6 +11,10 @@ resource "google_storage_bucket" "static_page" {
         environment = "uat"
         application = "front"
     }
+
+    depends_on = [
+        google_project_services.project_apis,
+    ]
 }
 
 resource "google_storage_bucket_acl" "static_page_acl" {
@@ -18,6 +22,10 @@ resource "google_storage_bucket_acl" "static_page_acl" {
 
     role_entity = [
         "READER:allUsers",
+    ]
+
+    depends_on = [
+        google_project_services.project_apis,
     ]
 }
 
@@ -27,4 +35,8 @@ resource "google_storage_bucket" "data_sink" {
     labels = {
         environment = "logging"
     }
+
+    depends_on = [
+        google_project_services.project_apis,
+    ]
 }

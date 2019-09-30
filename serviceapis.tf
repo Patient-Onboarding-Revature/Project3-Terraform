@@ -1,12 +1,11 @@
 resource "google_project_services" "project_apis" {
     project = "${var.project_id}"
     services = [
-        "compute.googleapis.com",
-        "container.googleapis.com",
         "clouddebugger.googleapis.com",
         "cloudkms.googleapis.com",
         "cloudprofiler.googleapis.com",
         "cloudresourcemanager.googleapis.com",
+        "compute.googleapis.com",
         "container.googleapis.com",
         "containerregistry.googleapis.com",
         "iam.googleapis.com",

@@ -22,6 +22,10 @@ resource "google_compute_instance" "devops_bastion" {
             network_tier = "STANDARD"
         }
     }
+
+    depends_on = [
+        google_project_services.project_apis,
+    ]
 }
 
 resource "google_compute_instance" "jenkins_vm" {
@@ -55,4 +59,8 @@ resource "google_compute_instance" "jenkins_vm" {
     }
 
     metadata_startup_script = "${data.template_file.jenkins_startup_script.rendered}"
+
+    depends_on = [
+        google_project_services.project_apis,
+    ]
 }
