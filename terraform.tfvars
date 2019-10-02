@@ -1,5 +1,5 @@
 // Project information
-project_id = "project-2-251819"
+project_id = "terraform-test-project-254716"
 region = "us-central1"
 zone = "us-central1-a"
 
@@ -14,8 +14,8 @@ database_tier = "db-f1-micro"
 authorized_networks_to_database = [{name = "all", value = "0.0.0.0/0"}]
 
 // Bucket name (must be globally unique)
-bucket_webpage_name = "thisisatestbucketokay17"
-bucket_data_sink = "thisisadatasinkbucket17"
+bucket_webpage_name = "thisisatestbucketagain21"
+bucket_data_sink = "thisisadatasinkbucket21"
 
 // KMS
 keyring_name = "my-keyring"
