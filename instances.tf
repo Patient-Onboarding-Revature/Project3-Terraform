@@ -64,3 +64,31 @@ resource "google_compute_instance" "jenkins_vm" {
         google_project_services.project_apis,
     ]
 }
+
+/*
+resource "google_compute_instance" "test_instance" {
+    name = "test-server"
+    machine_type = "f1-micro"
+    zone = var.zone
+    tags = ["http-server", "https-server", "jenkins", "server"]
+    allow_stopping_for_update = true
+
+    labels = {
+        environment = "uat"
+    }
+
+    boot_disk {
+        auto_delete = true
+        initialize_params {
+            image = "centos-7"
+        }
+    }
+
+    network_interface {
+        network = "default"
+        access_config {
+            network_tier = "STANDARD"
+        }
+    }
+}
+*/

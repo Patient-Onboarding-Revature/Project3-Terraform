@@ -14,7 +14,7 @@ resource "google_kms_crypto_key" "encryption_key" {
     purpose = "ENCRYPT_DECRYPT"
 
     lifecycle {
-        prevent_destroy = true
+        prevent_destroy = false
     }
 
     labels = {

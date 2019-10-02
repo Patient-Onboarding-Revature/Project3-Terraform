@@ -1,5 +1,5 @@
 // Project information
-project_id = "pure-courier-254516"
+project_id = "project-2-251819"
 region = "us-central1"
 zone = "us-central1-a"
 
@@ -14,8 +14,8 @@ database_tier = "db-f1-micro"
 authorized_networks_to_database = [{name = "all", value = "0.0.0.0/0"}]
 
 // Bucket name (must be globally unique)
-bucket_webpage_name = "thisisatestbucketokay3"
-bucket_data_sink = "thisisadatasinkbucket3"
+bucket_webpage_name = "thisisatestbucketokay17"
+bucket_data_sink = "thisisadatasinkbucket17"
 
 // KMS
 keyring_name = "my-keyring"
